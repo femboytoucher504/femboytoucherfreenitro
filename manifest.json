@@ -1,8 +1,8 @@
-
 {
-  "name": "FreeNitro",
-  "description": "Unlock nitro features locally",
-  "authors": [{ "name": "femboytoucher504" }],
+  "name": "Free Nitro Emojis",
+  "description": "Unlock custom emojis locally and format outbound messages seamlessly.",
+  "author": "femboytoucher504",
   "main": "index.js",
   "version": "1.0.0"
 }
+
