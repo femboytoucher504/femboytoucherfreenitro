@@ -1,0 +1,7 @@
+{
+  "name": "FreeNitroEmojis",
+  "description": "Unlock custom and animated emojis without Nitro. Ported from the original Aliucord version.",
+  "author": "FEMBOYTOUCHER",
+  "version": "1.0.0",
+  "main": "index.js"
+}
