@@ -1,6 +1,6 @@
-export default {
+({
     onLoad: () => {
-        const api = window.revenge || window.vendetta;
+        const api = typeof revenge !== 'undefined' ? revenge : (typeof vendetta !== 'undefined' ? vendetta : null);
         if (!api) return;
         try {
             const EmojiUtils = api.metro.findByProps("canUseEmojis") || api.metro.findByProps("getEmojiUnavailableReason");
@@ -8,9 +8,7 @@ export default {
                 if (EmojiUtils.canUseEmojis) EmojiUtils.canUseEmojis = () => true;
                 if (EmojiUtils.canUseAnimatedEmojis) EmojiUtils.canUseAnimatedEmojis = () => true;
             }
-        } catch (e) {
-            console.error(e);
-        }
+        } catch (e) {}
     },
     onUnload: () => {}
-};
+})
