@@ -1,8 +1,12 @@
 {
   "name": "Free Nitro Emojis",
   "description": "Unlock custom emojis locally and format outbound messages seamlessly.",
-  "author": "femboytoucher504",
+  "authors": [
+    {
+      "name": "femboytoucher504",
+      "id": "0"
+    }
+  ],
   "main": "index.js",
   "version": "1.0.0"
 }
-
