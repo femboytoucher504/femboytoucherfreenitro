@@ -1,7 +1,7 @@
 {
-  "name": "FreeNitroEmojis",
-  "description": "Bypasses premium emoji locks at startup.",
-  "author": "Ported",
+  "name": "Free Nitro Emojis",
+  "description": "Unlocks custom emotes for your client setup",
+  "author": "femboytoucher504",
   "main": "index.js",
   "version": "1.0.0"
 }
