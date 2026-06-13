@@ -1,6 +1,4 @@
-let patches = [];
-
-export default {
+({
     onLoad: () => {
         const SETTINGS = {
             emote_size: "48",          
@@ -26,7 +24,7 @@ export default {
             });
         }
 
-        // 1. EARLY PROFILE HOOK - Removes lock icons early
+        // 1. EARLY PROFILE HOOK
         try {
             const UserStore = findByProps("getCurrentUser");
             if (UserStore && UserStore.getCurrentUser) {
@@ -52,7 +50,7 @@ export default {
             }
         } catch (e) {}
 
-        // 2. EARLY EMOJI DATA HOOK - Unlocks lists
+        // 2. EARLY EMOJI DATA HOOK
         try {
             const EmojiStore = findByProps("getCustomEmoji", "getEmojis") || findByProps("getGuildEmoji");
             if (EmojiStore) {
@@ -71,7 +69,7 @@ export default {
             }
         } catch (e) {}
 
-        // 3. GLOBAL PERMISSIONS BYPASS
+        // 3. GLOBAL PERMISSIONS OVERRIDE
         try {
             const EmojiUtils = findByProps("getEmojiUnavailableReason", "isEmojiFiltered") || findByProps("canUseEmojis");
             if (EmojiUtils) {
@@ -86,7 +84,7 @@ export default {
         try {
             const MessageActions = findByProps("sendMessage", "editMessage");
             if (MessageActions && patcher) {
-                patches.push(patcher.before("sendMessage", MessageActions, (args) => {
+                patcher.before("sendMessage", MessageActions, (args) => {
                     const messageObj = args[1];
                     if (!messageObj || typeof messageObj.content !== "string") return;
 
@@ -101,13 +99,9 @@ export default {
                         if (SETTINGS.format_type === "markdown_ext") return `[\u2236${name}\u2236](${cdnUrl})`;
                         return cdnUrl;
                     });
-                }));
+                });
             }
         } catch (e) {}
     },
-    onUnload: () => {
-        for (const unpatch of patches) {
-            try { unpatch(); } catch (e) {}
-        }
-    }
-};
+    onUnload: () => {}
+})
