@@ -1,7 +1,8 @@
+
 {
-  "name": "Free Nitro Emojis",
-  "description": "Unlocks custom emotes for your client setup",
-  "author": "femboytoucher504",
+  "name": "FreeNitro",
+  "description": "Unlock nitro features locally",
+  "authors": [{ "name": "femboytoucher504" }],
   "main": "index.js",
   "version": "1.0.0"
 }
