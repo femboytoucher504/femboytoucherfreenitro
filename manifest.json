@@ -1,0 +1,7 @@
+{
+  "name": "FreeNitroEmojis",
+  "description": "Bypasses premium emoji locks at startup.",
+  "author": "Ported",
+  "main": "index.js",
+  "version": "1.0.0"
+}
